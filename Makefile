@@ -1,5 +1,5 @@
-NAME := trojan-go
-PACKAGE_NAME := github.com/p4gefau1t/trojan-go
+NAME := trojan-go-extra
+PACKAGE_NAME := github.com/thomasgame/trojan-go-extra
 VERSION := `git describe --dirty`
 COMMIT := `git rev-parse HEAD`
 
@@ -8,8 +8,8 @@ BUILD_DIR := build
 VAR_SETTING := -X $(PACKAGE_NAME)/constant.Version=$(VERSION) -X $(PACKAGE_NAME)/constant.Commit=$(COMMIT)
 GOBUILD = env CGO_ENABLED=0 $(GO_DIR)go build -tags "full" -trimpath -ldflags="-s -w -buildid= $(VAR_SETTING)" -o $(BUILD_DIR)
 
-.PHONY: trojan-go release test
-normal: clean trojan-go
+.PHONY: trojan-go-extra release test
+normal: clean trojan-go-extra
 
 clean:
 	rm -rf $(BUILD_DIR)
@@ -29,7 +29,7 @@ test:
 	# Disable Bloomfilter when testing
 	SHADOWSOCKS_SF_CAPACITY="-1" $(GO_DIR)go test -v ./...
 
-trojan-go:
+trojan-go-extra:
 	mkdir -p $(BUILD_DIR)
 	$(GOBUILD)
 

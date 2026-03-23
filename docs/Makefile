@@ -10,7 +10,6 @@ hugo-build: clean hugo-themes
 
 hugo:
 	hugo server --disableFastRender --enableGitInfo --watch --source .
-	# hugo server -D
 
 hugo-themes:
 	rm -rf themes

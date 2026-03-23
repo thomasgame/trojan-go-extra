@@ -5,13 +5,13 @@ import (
 	"net"
 	"sync"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/config"
-	"github.com/p4gefau1t/trojan-go/log"
-	"github.com/p4gefau1t/trojan-go/tunnel"
-	"github.com/p4gefau1t/trojan-go/tunnel/freedom"
-	"github.com/p4gefau1t/trojan-go/tunnel/http"
-	"github.com/p4gefau1t/trojan-go/tunnel/socks"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/config"
+	"github.com/thomasgame/trojan-go-extra/log"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
+	"github.com/thomasgame/trojan-go-extra/tunnel/freedom"
+	"github.com/thomasgame/trojan-go-extra/tunnel/http"
+	"github.com/thomasgame/trojan-go-extra/tunnel/socks"
 )
 
 type Server struct {

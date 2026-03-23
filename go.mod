@@ -1,9 +1,10 @@
-module github.com/p4gefau1t/trojan-go
+module github.com/thomasgame/trojan-go-extra
 
-go 1.17
+go 1.26.0
 
 require (
 	github.com/go-sql-driver/mysql v1.6.0
+	github.com/klauspost/compress v1.17.11
 	github.com/refraction-networking/utls v0.0.0-20210713165636-0b2885c8c0d4
 	github.com/shadowsocks/go-shadowsocks2 v0.1.5
 	github.com/smartystreets/goconvey v1.6.4

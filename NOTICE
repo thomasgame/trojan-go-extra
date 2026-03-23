@@ -1,0 +1,35 @@
+Trojan-Go-Extra — 版权与修改说明
+================================
+
+本软件衍生自上游项目 Trojan-Go，在 GNU General Public License v3.0（GPL-3.0）
+下发布。完整许可证文本见仓库根目录 LICENSE 文件。
+
+上游项目
+--------
+- 名称：Trojan-Go
+- 原作者 / 上游仓库：https://github.com/p4gefau1t/trojan-go
+- 上游许可证：GPL-3.0
+
+本仓库（Fork）说明
+------------------
+- 仓库地址：https://github.com/thomasgame/trojan-go-extra
+- **非**上游 Trojan-Go 的官方发布渠道；与 p4gefau1t/trojan-go 无隶属关系。
+- 模块路径（go.mod）：github.com/thomasgame/trojan-go-extra
+- 本 Fork 维护联系：luring.work@gmail.com
+
+相对上游的主要修改（截至文档更新时）
+------------------------------------
+- Go 模块路径：github.com/thomasgame/trojan-go-extra；二进制名：trojan-go-extra
+- 增加可选的传输层流量压缩（zstd）及相关配置与文档
+- 其他构建、文档与仓库元数据调整
+
+版权与再分发
+------------
+- 上游代码的版权仍归原作者及相应贡献者所有。
+- 本 Fork 中的新增与修改部分，在 GPL-3.0 下授权；再分发须遵守 GPL-3.0，
+  包括保留本声明、提供对应源码、不得附加与 GPL 冲突的额外限制。
+
+免责声明
+--------
+本软件按「原样」提供，不作任何明示或暗示担保。使用须遵守当地法律法规，
+由使用者自行承担风险。商业或大规模分发前建议咨询法律顾问。

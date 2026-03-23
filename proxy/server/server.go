@@ -3,18 +3,19 @@ package server
 import (
 	"context"
 
-	"github.com/p4gefau1t/trojan-go/config"
-	"github.com/p4gefau1t/trojan-go/proxy"
-	"github.com/p4gefau1t/trojan-go/proxy/client"
-	"github.com/p4gefau1t/trojan-go/tunnel/freedom"
-	"github.com/p4gefau1t/trojan-go/tunnel/mux"
-	"github.com/p4gefau1t/trojan-go/tunnel/router"
-	"github.com/p4gefau1t/trojan-go/tunnel/shadowsocks"
-	"github.com/p4gefau1t/trojan-go/tunnel/simplesocks"
-	"github.com/p4gefau1t/trojan-go/tunnel/tls"
-	"github.com/p4gefau1t/trojan-go/tunnel/transport"
-	"github.com/p4gefau1t/trojan-go/tunnel/trojan"
-	"github.com/p4gefau1t/trojan-go/tunnel/websocket"
+	"github.com/thomasgame/trojan-go-extra/config"
+	"github.com/thomasgame/trojan-go-extra/proxy"
+	"github.com/thomasgame/trojan-go-extra/proxy/client"
+	"github.com/thomasgame/trojan-go-extra/tunnel/compress"
+	"github.com/thomasgame/trojan-go-extra/tunnel/freedom"
+	"github.com/thomasgame/trojan-go-extra/tunnel/mux"
+	"github.com/thomasgame/trojan-go-extra/tunnel/router"
+	"github.com/thomasgame/trojan-go-extra/tunnel/shadowsocks"
+	"github.com/thomasgame/trojan-go-extra/tunnel/simplesocks"
+	"github.com/thomasgame/trojan-go-extra/tunnel/tls"
+	"github.com/thomasgame/trojan-go-extra/tunnel/transport"
+	"github.com/thomasgame/trojan-go-extra/tunnel/trojan"
+	"github.com/thomasgame/trojan-go-extra/tunnel/websocket"
 )
 
 const Name = "SERVER"
@@ -45,16 +46,24 @@ func init() {
 			root = root.BuildNext(tls.Name)
 		}
 
+		// trojan 子树：transport -> [tls] -> [shadowsocks] -> [compress] -> trojan -> ...
 		trojanSubTree := root
 		if cfg.Shadowsocks.Enabled {
 			trojanSubTree = trojanSubTree.BuildNext(shadowsocks.Name)
 		}
+		if cfg.Compress.CompressionOn() {
+			trojanSubTree = trojanSubTree.BuildNext(compress.Name)
+		}
 		trojanSubTree.BuildNext(trojan.Name).BuildNext(mux.Name).BuildNext(simplesocks.Name).IsEndpoint = true
 		trojanSubTree.BuildNext(trojan.Name).IsEndpoint = true
 
+		// websocket 子树：transport -> [tls] -> websocket -> [shadowsocks] -> [compress] -> trojan -> ...
 		wsSubTree := root.BuildNext(websocket.Name)
 		if cfg.Shadowsocks.Enabled {
 			wsSubTree = wsSubTree.BuildNext(shadowsocks.Name)
+		}
+		if cfg.Compress.CompressionOn() {
+			wsSubTree = wsSubTree.BuildNext(compress.Name)
 		}
 		wsSubTree.BuildNext(trojan.Name).BuildNext(mux.Name).BuildNext(simplesocks.Name).IsEndpoint = true
 		wsSubTree.BuildNext(trojan.Name).IsEndpoint = true

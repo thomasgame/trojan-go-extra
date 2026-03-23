@@ -6,12 +6,12 @@ package nat
 import (
 	"context"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/config"
-	"github.com/p4gefau1t/trojan-go/proxy"
-	"github.com/p4gefau1t/trojan-go/proxy/client"
-	"github.com/p4gefau1t/trojan-go/tunnel"
-	"github.com/p4gefau1t/trojan-go/tunnel/tproxy"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/config"
+	"github.com/thomasgame/trojan-go-extra/proxy"
+	"github.com/thomasgame/trojan-go-extra/proxy/client"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
+	"github.com/thomasgame/trojan-go-extra/tunnel/tproxy"
 )
 
 const Name = "NAT"
@@ -24,7 +24,7 @@ func init() {
 		}
 		ctx, cancel := context.WithCancel(ctx)
 		serverStack := []string{tproxy.Name}
-		clientStack := client.GenerateClientTree(cfg.TransportPlugin.Enabled, cfg.Mux.Enabled, cfg.Websocket.Enabled, cfg.Shadowsocks.Enabled, false)
+		clientStack := client.GenerateClientTree(cfg.TransportPlugin.Enabled, cfg.Mux.Enabled, cfg.Websocket.Enabled, cfg.Shadowsocks.Enabled, false, cfg.Compress.CompressionOn())
 		c, err := proxy.CreateClientStack(ctx, clientStack)
 		if err != nil {
 			cancel()

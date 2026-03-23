@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/log"
-	"github.com/p4gefau1t/trojan-go/tunnel"
-	"github.com/p4gefau1t/trojan-go/tunnel/trojan"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/log"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
+	"github.com/thomasgame/trojan-go-extra/tunnel/trojan"
 )
 
 // Server is a simplesocks server

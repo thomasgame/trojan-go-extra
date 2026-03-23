@@ -1,7 +1,7 @@
 package build
 
 import (
-	_ "github.com/p4gefau1t/trojan-go/log/golog"
-	_ "github.com/p4gefau1t/trojan-go/statistic/memory"
-	_ "github.com/p4gefau1t/trojan-go/version"
+	_ "github.com/thomasgame/trojan-go-extra/log/golog"
+	_ "github.com/thomasgame/trojan-go-extra/statistic/memory"
+	_ "github.com/thomasgame/trojan-go-extra/version"
 )

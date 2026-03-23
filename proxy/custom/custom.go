@@ -6,10 +6,10 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/config"
-	"github.com/p4gefau1t/trojan-go/proxy"
-	"github.com/p4gefau1t/trojan-go/tunnel"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/config"
+	"github.com/thomasgame/trojan-go-extra/proxy"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
 )
 
 func convert(i interface{}) interface{} {

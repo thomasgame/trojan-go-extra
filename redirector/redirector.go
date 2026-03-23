@@ -6,8 +6,8 @@ import (
 	"net"
 	"reflect"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/log"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/log"
 )
 
 type Dial func(net.Addr) (net.Conn, error)

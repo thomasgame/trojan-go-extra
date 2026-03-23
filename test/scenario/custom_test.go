@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	_ "github.com/p4gefau1t/trojan-go/proxy/custom"
-	"github.com/p4gefau1t/trojan-go/test/util"
+	"github.com/thomasgame/trojan-go-extra/common"
+	_ "github.com/thomasgame/trojan-go-extra/proxy/custom"
+	"github.com/thomasgame/trojan-go-extra/test/util"
 )
 
 func TestCustom1(t *testing.T) {

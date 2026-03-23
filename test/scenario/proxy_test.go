@@ -13,17 +13,17 @@ import (
 
 	netproxy "golang.org/x/net/proxy"
 
-	_ "github.com/p4gefau1t/trojan-go/api"
-	_ "github.com/p4gefau1t/trojan-go/api/service"
-	"github.com/p4gefau1t/trojan-go/common"
-	_ "github.com/p4gefau1t/trojan-go/log/golog"
-	"github.com/p4gefau1t/trojan-go/proxy"
-	_ "github.com/p4gefau1t/trojan-go/proxy/client"
-	_ "github.com/p4gefau1t/trojan-go/proxy/forward"
-	_ "github.com/p4gefau1t/trojan-go/proxy/nat"
-	_ "github.com/p4gefau1t/trojan-go/proxy/server"
-	_ "github.com/p4gefau1t/trojan-go/statistic/memory"
-	"github.com/p4gefau1t/trojan-go/test/util"
+	_ "github.com/thomasgame/trojan-go-extra/api"
+	_ "github.com/thomasgame/trojan-go-extra/api/service"
+	"github.com/thomasgame/trojan-go-extra/common"
+	_ "github.com/thomasgame/trojan-go-extra/log/golog"
+	"github.com/thomasgame/trojan-go-extra/proxy"
+	_ "github.com/thomasgame/trojan-go-extra/proxy/client"
+	_ "github.com/thomasgame/trojan-go-extra/proxy/forward"
+	_ "github.com/thomasgame/trojan-go-extra/proxy/nat"
+	_ "github.com/thomasgame/trojan-go-extra/proxy/server"
+	_ "github.com/thomasgame/trojan-go-extra/statistic/memory"
+	"github.com/thomasgame/trojan-go-extra/test/util"
 )
 
 // test key and cert

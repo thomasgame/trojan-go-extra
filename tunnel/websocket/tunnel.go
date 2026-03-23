@@ -3,7 +3,7 @@ package websocket
 import (
 	"context"
 
-	"github.com/p4gefau1t/trojan-go/tunnel"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
 )
 
 const Name = "WEBSOCKET"

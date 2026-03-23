@@ -4,8 +4,8 @@ import (
 	"context"
 	"net"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/tunnel"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
 )
 
 type Conn struct {

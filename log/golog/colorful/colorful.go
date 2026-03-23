@@ -6,7 +6,7 @@ package colorful
 import (
 	"runtime"
 
-	"github.com/p4gefau1t/trojan-go/log/golog/buffer"
+	"github.com/thomasgame/trojan-go-extra/log/golog/buffer"
 )
 
 // ColorBuffer add color option to buffer append

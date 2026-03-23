@@ -1,5 +1,5 @@
 [Unit]
-Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
+Description=Trojan-Go-Extra (community fork) - TLS proxy
 Documentation=https://p4gefau1t.github.io/trojan-go/
 After=network.target nss-lookup.target
 
@@ -8,7 +8,7 @@ User=nobody
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/trojan-go -config /etc/trojan-go/%i.json
+ExecStart=/usr/bin/trojan-go-extra -config /etc/trojan-go-extra/%i.json
 Restart=on-failure
 RestartSec=10s
 LimitNOFILE=infinity

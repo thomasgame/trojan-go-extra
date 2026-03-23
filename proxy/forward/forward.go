@@ -3,11 +3,11 @@ package forward
 import (
 	"context"
 
-	"github.com/p4gefau1t/trojan-go/config"
-	"github.com/p4gefau1t/trojan-go/proxy"
-	"github.com/p4gefau1t/trojan-go/proxy/client"
-	"github.com/p4gefau1t/trojan-go/tunnel"
-	"github.com/p4gefau1t/trojan-go/tunnel/dokodemo"
+	"github.com/thomasgame/trojan-go-extra/config"
+	"github.com/thomasgame/trojan-go-extra/proxy"
+	"github.com/thomasgame/trojan-go-extra/proxy/client"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
+	"github.com/thomasgame/trojan-go-extra/tunnel/dokodemo"
 )
 
 const Name = "FORWARD"
@@ -17,7 +17,7 @@ func init() {
 		cfg := config.FromContext(ctx, Name).(*client.Config)
 		ctx, cancel := context.WithCancel(ctx)
 		serverStack := []string{dokodemo.Name}
-		clientStack := client.GenerateClientTree(cfg.TransportPlugin.Enabled, cfg.Mux.Enabled, cfg.Websocket.Enabled, cfg.Shadowsocks.Enabled, cfg.Router.Enabled)
+		clientStack := client.GenerateClientTree(cfg.TransportPlugin.Enabled, cfg.Mux.Enabled, cfg.Websocket.Enabled, cfg.Shadowsocks.Enabled, cfg.Router.Enabled, cfg.Compress.CompressionOn())
 		c, err := proxy.CreateClientStack(ctx, clientStack)
 		if err != nil {
 			cancel()

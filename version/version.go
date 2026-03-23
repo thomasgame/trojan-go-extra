@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/constant"
-	"github.com/p4gefau1t/trojan-go/option"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/constant"
+	"github.com/thomasgame/trojan-go-extra/option"
 )
 
 type versionOption struct {
@@ -24,14 +24,16 @@ func (*versionOption) Priority() int {
 
 func (c *versionOption) Handle() error {
 	if *c.flag {
-		fmt.Println("Trojan-Go", constant.Version)
+		fmt.Println("Trojan-Go-Extra", constant.Version)
 		fmt.Println("Go Version:", runtime.Version())
 		fmt.Println("OS/Arch:", runtime.GOOS+"/"+runtime.GOARCH)
 		fmt.Println("Git Commit:", constant.Commit)
 		fmt.Println("")
 		fmt.Println("Developed by PageFault (p4gefau1t)")
+		fmt.Println("This build: community fork — https://github.com/thomasgame/trojan-go-extra")
+		fmt.Println("See NOTICE in repository for upstream attribution and license.")
 		fmt.Println("Licensed under GNU General Public License version 3")
-		fmt.Println("GitHub Repository:\thttps://github.com/p4gefau1t/trojan-go")
+		fmt.Println("GitHub Repository:\thttps://github.com/thomasgame/trojan-go-extra")
 		fmt.Println("Trojan-Go Documents:\thttps://p4gefau1t.github.io/trojan-go/")
 		return nil
 	}

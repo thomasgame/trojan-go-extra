@@ -8,14 +8,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/p4gefau1t/trojan-go/api"
-	"github.com/p4gefau1t/trojan-go/common"
-	"github.com/p4gefau1t/trojan-go/config"
-	"github.com/p4gefau1t/trojan-go/log"
-	"github.com/p4gefau1t/trojan-go/statistic"
-	"github.com/p4gefau1t/trojan-go/statistic/memory"
-	"github.com/p4gefau1t/trojan-go/tunnel"
-	"github.com/p4gefau1t/trojan-go/tunnel/mux"
+	"github.com/thomasgame/trojan-go-extra/api"
+	"github.com/thomasgame/trojan-go-extra/common"
+	"github.com/thomasgame/trojan-go-extra/config"
+	"github.com/thomasgame/trojan-go-extra/log"
+	"github.com/thomasgame/trojan-go-extra/statistic"
+	"github.com/thomasgame/trojan-go-extra/statistic/memory"
+	"github.com/thomasgame/trojan-go-extra/tunnel"
+	"github.com/thomasgame/trojan-go-extra/tunnel/mux"
 )
 
 const (
